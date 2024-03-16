@@ -12,3 +12,8 @@ This repository contains the material and content of the DevOps course at the en
 ### Material
 
 The introduction to the course and DevOps can be found [here](https://people.irisa.fr/Benoit.Combemale/course/esir/esir3/). 
+
+### Tutorial activities
+
+Students have to choose a system with micro-services to apply some DevOps related tools on it;
+if they cannot think of such system/project, they can go to the [doodle](https://github.com/selabs-ur1/doodle) github page and use it.
