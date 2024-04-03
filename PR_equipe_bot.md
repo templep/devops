@@ -21,7 +21,7 @@ La mission de ce bot est de suggérer des mise à jout de dépendances et c'est 
 ## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
 #### Contexte
 //TODO contexte de la mise en place
-#### Presenation de GitHub Action
+#### Presentation de GitHub Action
 //TODO presentation de GitHub action
 #### Mise en place d'une action
 1. Nous créons un fichier github-actions.yaml dans le repertoire .github/workflows
