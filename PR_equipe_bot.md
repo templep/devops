@@ -16,6 +16,53 @@
 La mission de ce bot est de suggérer des mise à jout de dépendances et c'est ce qu'il fait. Le problème est qu'il reste au dévelopeur de s'assurer que les modifications proposés seront compatibles avec le code déjà en place et ne causeront pas de bug. Afin d'automatiser ce processus, nous avons mit en place [l'automatisation des tests à chaque pull request](#Mise-en-place-d'automatisation-pour-une-pleine-intégration-des-bots-dans-la-boucle-DevOps).
 
 ### Dependabot
+#### Qu'est-ce que Dependabot ?
+
+Dependabot est un outil d'automatisation de gestion des dépendances dans les projets logiciels. Il est conçu pour aider les développeurs à maintenir leurs projets à jour en surveillant les mises à jour des dépendances et en pull requests pour les mettre à jour automatiquement.
+
+#### Fonctionnalités principales
+
+- **Surveillance des dépendances** : Dependabot surveille les fichiers de configuration des dépendances (comme `package.json`) pour détecter les mises à jour disponibles.
+
+- **Ouverture de pull requests** : Lorsqu'une mise à jour est détectée, Dependabot ouvre automatiquement une demande de tirage (pull request) avec les modifications nécessaires pour mettre à jour les dépendances.
+
+- **Gestion des conflits** : Dependabot est capable de gérer les conflits de fusion (merge conflicts) qui peuvent survenir lors de la mise à jour des dépendances, en proposant des solutions ou en les résolvant automatiquement si possible.
+
+- **Compatibilité avec divers écosystèmes** : Il prend en charge une grande variété de gestionnaires de dépendances, y compris npm, Bundler, Composer, Maven, etc.
+
+- **Personnalisation** : Les utilisateurs peuvent personnaliser le comportement de Dependabot en définissant des politiques spécifiques, comme la fréquence des vérifications de dépendances ou les actions à prendre en cas de mise à jour.
+
+#### Avantages
+
+- **Maintien à jour** : En automatisant la gestion des dépendances, Dependabot permet de garder les projets logiciels à jour avec les dernières versions des bibliothèques et des frameworks.
+
+- **Réduction de la dette technique** : En évitant l'accumulation de dépendances obsolètes, Dependabot aide à réduire la dette technique et à maintenir un code base sain et sécurisé.
+
+- **Gain de temps** : En automatisant les tâches de gestion des dépendances, Dependabot libère du temps pour les développeurs, qui peuvent se concentrer sur des tâches plus créatives et à plus forte valeur ajoutée.
+
+#### Mise en place et paramétrage avec GitHub
+
+Pour activer Dependabot et le configurer sur un dépôt GitHub, il faut :
+
+1. **Activer Dependabot** :
+   - Accédez aux paramètres du dépôt sur GitHub.
+   - Dans la section "Options", cliquez sur "Security & analysis".
+   - Activez Dependabot pour le dépôt en cliquant sur "Activer".
+
+2. **Configurer les fichiers de dépendances** :
+   - Assurez-vous que les fichiers de configuration des dépendances de votre projet sont présents dans le dépôt (par exemple, `package.json` pour Node.js).
+   - Si votre fichier de configuration des dépendances est dans un répertoire spécifique (comme `back/package.json`), assurez-vous de spécifier le chemin dans les paramètres de Dependabot.
+
+3. **Personnaliser les politiques** :
+   - Dans les paramètres de Dependabot sur GitHub, explorez les options de personnalisation disponibles.
+   - Vous pouvez définir la fréquence des vérifications de dépendances, les règles d'acceptation des mises à jour, les dépendances à ignorer, etc.
+   - Pour des politiques plus avancées, vous pouvez également utiliser un fichier de configuration Dependabot directement dans votre dépôt.
+
+4. **Gérer les notifications** :
+   - Configurez les notifications pour être informé des actions de Dependabot.
+   - Vous pouvez choisir de recevoir des notifications par e-mail, sur la plateforme GitHub, ou via des intégrations avec des services de messagerie comme Discord.
+
+Une fois que Dependabot est activé et configuré sur votre dépôt GitHub, il commencera à surveiller les mises à jour des dépendances et à ouvrir des demandes de tirage (pull requests) lorsque des mises à jour sont détectées. Vous pouvez toujours ajuster les paramètres et les politiques selon les besoins spécifiques de votre projet.
 
 
 ## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
