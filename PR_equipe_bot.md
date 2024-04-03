@@ -51,3 +51,11 @@ jobs:
           sudo npm test
       - run: echo "🍏 This job's status is ${{ job.status }}."
 ```
+3. Nous faisons ensuite un commit de ce fichier dans une nouvelle branche de notre choix
+4. Nous faisons une pull request de notre nouvelle branche
+5. Dans l'interface de notre Repository nous cliquons sur le module *Actions*
+6. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*
+//TODO mettre pleins de jolies photos
+
+#### critiques et bilan
+//TODO expliquer
