@@ -109,8 +109,15 @@ jobs:
 3. Nous faisons ensuite un commit de ce fichier dans une nouvelle branche de notre choix
 4. Nous faisons une pull request de notre nouvelle branche
 5. Dans l'interface de notre Repository nous cliquons sur le module *Actions*
-6. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*
-//TODO mettre pleins de jolies photos
+   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/d6948d5f-eaeb-48db-a898-9cea26cfc3e5)
+
+7. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*
+8. Nous visualisons maintenant l'ensemble des exécutions dûes aux différentes pull requests
+9. Si nous cliquons sur une action, nous obtenons le détail de l'éxécution
+   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/5f895f39-fae7-4260-9db7-96bc4f1681a0)
 
 #### critiques et bilan
-//TODO expliquer
+La mise en place de ce GitHub workflow répond bien à nos attentes et il nous permet aussi d'obtenir une visualisation du résultat de tests directement dans l'affichage des pull request. Ceci s'implifie grandement la prise de décision sur l'acceptation des pull request générés par les bots.
+![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/7fc5c404-69cf-4206-a461-0c5776699268)
+
+
