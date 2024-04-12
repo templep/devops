@@ -118,6 +118,6 @@ jobs:
 
 #### critiques et bilan
 La mise en place de ce GitHub workflow répond bien à nos attentes et il nous permet aussi d'obtenir une visualisation du résultat de tests directement dans l'affichage des pull request. Ceci s'implifie grandement la prise de décision sur l'acceptation des pull request générés par les bots.
-![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/7fc5c404-69cf-4206-a461-0c5776699268)
+![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/a5dae8ae-9e86-4eba-9279-a3846a72d12f)
 
 
