@@ -8,7 +8,7 @@
 | Nom du bot  | Type de bot             | Gratuit | Mise en place réussite |
 |-------------|-------------------------|---------|------------------------|
 | Renovate    | Gestion des dépendances | Oui     | Oui                    |
-|             |                         |         |                        |
+| Dependabot  |                         |         |                        |
 |             |                         |         |                        |
 
 ### Renovate
@@ -75,11 +75,11 @@ Une fois que Dependabot est activé et configuré sur votre dépôt GitHub, il c
 
 ## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
 #### Contexte
-//TODO contexte de la mise en place
+Nous souhaitons mettre an place des automatisations pour compléter l'intégration de nos bots et augmenter le taux de résilience.
 #### Presentation de GitHub Action
-//TODO presentation de GitHub action
+GitHub Actions est une plateforme d'automatisation des workflows intégrée à GitHub, permettant aux développeurs d'automatiser diverses tâches de développement logiciel telles que les tests, les déploiements et les notifications. Ce qui nous intéresse dans ce cas est la possibilité de mettre en place l'éxécution de nos fichiers tests à chaque pull request.
 #### Mise en place d'une action
-1. Nous créons un fichier github-actions.yaml dans le repertoire .github/workflows
+1. Dans notre projet, nous créons un fichier github-actions.yaml dans le repertoire .github/workflows
 2. Nous mettons le code ci-dessous dans le fichier
 ```yaml
 name: GitHub Actions Elie
