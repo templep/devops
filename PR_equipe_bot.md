@@ -3,21 +3,29 @@
 ## Résumé des différents types de bot
 //TODO faire le résumé très brefs des différents types de bot
 
-## Présentation pratique des bots mit en place
+## Présentation pratique des bots mit en place par nos soins 
+//TODO
+| Nom du bot  | Type de bot             | Gratuit | Mise en place réussite |
+|-------------|-------------------------|---------|------------------------|
+| Renovate    | Gestion des dépendances | Oui     | Oui                    |
+|             |                         |         |                        |
+|             |                         |         |                        |
 
 ### Renovate
 #### Presentation
-//TODO presenter renovate
+Renovate est un bot qui va venir scanner le code et vérifier les versions des dépendances. Il va ensuite générer des pull request pour suggérer les modificiations de dépendances par les dernières versions disponible. C'est ensuite au développeur de s'assurer que la modification fonctionne pour son programme et de l'accepter si besoin.
 #### Installation du bot
 //TODO procédure d'installation
 #### Actions realisés par le bot
-//TODO résumer les actions
+Le bot nous a généré des pull request suggérants de mettre à jour des dépendances.
+Un exemple est ci-dessous :
+![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/0863419e-f6f7-43c1-a711-b2fd470d75b1)
+
 #### Critiques et bilan
 La mission de ce bot est de suggérer des mise à jout de dépendances et c'est ce qu'il fait. Le problème est qu'il reste au dévelopeur de s'assurer que les modifications proposés seront compatibles avec le code déjà en place et ne causeront pas de bug. Afin d'automatiser ce processus, nous avons mit en place [l'automatisation des tests à chaque pull request](#Mise-en-place-d'automatisation-pour-une-pleine-intégration-des-bots-dans-la-boucle-DevOps).
 
 ### Dependabot
 #### Qu'est-ce que Dependabot ?
-
 Dependabot est un outil d'automatisation de gestion des dépendances dans les projets logiciels. Il est conçu pour aider les développeurs à maintenir leurs projets à jour en surveillant les mises à jour des dépendances et en pull requests pour les mettre à jour automatiquement.
 
 #### Fonctionnalités principales
