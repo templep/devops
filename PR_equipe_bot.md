@@ -114,7 +114,8 @@ jobs:
 7. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*
 8. Nous visualisons maintenant l'ensemble des exécutions dûes aux différentes pull requests
 9. Si nous cliquons sur une action, nous obtenons le détail de l'éxécution
-   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/5f895f39-fae7-4260-9db7-96bc4f1681a0)
+   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/f17c5597-3ec6-45d0-af41-c298bf8a9e0f)
+
 
 #### critiques et bilan
 La mise en place de ce GitHub workflow répond bien à nos attentes et il nous permet aussi d'obtenir une visualisation du résultat de tests directement dans l'affichage des pull request. Ceci s'implifie grandement la prise de décision sur l'acceptation des pull request générés par les bots.
