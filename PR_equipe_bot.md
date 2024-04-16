@@ -5,11 +5,11 @@
 
 ## Présentation pratique des bots mis en place par nos soins 
 //TODO
-| Nom du bot  | Type de bot             | Gratuit | Mise en place réussie |
-|-------------|-------------------------|---------|------------------------|
-| Renovate    | Gestion des dépendances | Oui     | Oui                    |
-| Dependabot  |                         |         |                        |
-|             |                         |         |                        |
+| Nom du bot  | Type de bot                | Gratuit | Mise en place réussie |
+|-------------|----------------------------|---------|------------------------|
+| Renovate    | Gestion des dépendances    | Oui     | Oui                    |
+| Dependabot  | Mise a jours de dépendance | Oui     | Oui                    |
+|             |                            |         |                        |
 
 ### Renovate
 #### Présentation
@@ -75,24 +75,33 @@ Pour activer Dependabot et le configurer sur un dépôt GitHub, il faut :
 
 1. **Activer Dependabot** :
    - Accédez aux paramètres du dépôt sur GitHub.
+     
+   ![https://github.com/ESIR2-S8-DevOps/devops/blob/main/pictures/enableDependabot.png](https://github.com/ESIR2-S8-DevOps/devops/blob/main/pictures/settingsButtun.png)
+
    - Dans la section "Options", cliquez sur "Security & analysis".
+
+   ![image](https://github.com/ESIR2-S8-DevOps/devops/blob/main/pictures/codeSecurityAnalysis.png)
+   
    - Activez Dependabot pour le dépôt en cliquant sur "Activer".
+     
+  ![image](https://github.com/ESIR2-S8-DevOps/devops/blob/main/pictures/enableDependabot.png)
 
-2. **Configurer les fichiers de dépendances** :
+
+3. **Configurer les fichiers de dépendances** :
    - Assurez-vous que les fichiers de configuration des dépendances de votre projet sont présents dans le dépôt (par exemple, `package.json` pour Node.js).
-   - Si votre fichier de configuration des dépendances est dans un répertoire spécifique (comme `back/package.json`), assurez-vous de spécifier le chemin dans les paramètres de Dependabot.
 
-3. **Personnaliser les politiques** :
-   - Dans les paramètres de Dependabot sur GitHub, explorez les options de personnalisation disponibles.
+4. **Personnaliser les politiques** :
    - Vous pouvez définir la fréquence des vérifications de dépendances, les règles d'acceptation des mises à jour, les dépendances à ignorer, etc.
    - Pour des politiques plus avancées, vous pouvez également utiliser un fichier de configuration Dependabot directement dans votre dépôt.
 
-4. **Gérer les notifications** :
+5. **Gérer les notifications** :
    - Configurez les notifications pour être informé des actions de Dependabot.
    - Vous pouvez choisir de recevoir des notifications par e-mail, sur la plateforme GitHub, ou via des intégrations avec des services de messagerie comme Discord.
 
-Une fois que Dependabot est activé et configuré sur votre dépôt GitHub, il commencera à surveiller les mises à jour des dépendances et à ouvrir des demandes de tirage (pull requests) lorsque des mises à jour sont détectées. Vous pouvez toujours ajuster les paramètres et les politiques selon les besoins spécifiques de votre projet.
+Une fois que Dependabot est activé et configuré sur votre dépôt GitHub, il commencera à surveiller les mises à jour des dépendances et à ouvrir des demandes de tirage (pull requests) lorsque des mises à jour sont détectées.
 
+#### Critiques et bilan
+Nous avons ici mis en place un bot native à GitHub capable d'analyser les dépendances comme le bot précédent et de proposer par l'intermédiaire de pull request leur mise à jour en fonction des anomalies de sécurité détecter. Encore une fois ses mises à jour ne se font que si l'utilisateur les accepte pour éviter de générer des problèmes. De plus la sécurité est un véritable plus que ce bot apporte notamment pour détecter et corriger les éventuelles CVE qui ont été déployer.
 
 ## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
 #### Contexte
