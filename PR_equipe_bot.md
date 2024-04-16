@@ -1,55 +1,53 @@
-# Les bots dans le Dev-Ops
+# Les bots dans le DevOps
 
 ## Résumé des différents types de bot
-//TODO faire le résumé très brefs des différents types de bot
+//TODO faire le résumé très bref des différents types de bot
 
 ## Présentation pratique des bots mis en place par nos soins 
 //TODO
-| Nom du bot  | Type de bot             | Gratuit | Mise en place réussite |
+| Nom du bot  | Type de bot             | Gratuit | Mise en place réussie |
 |-------------|-------------------------|---------|------------------------|
 | Renovate    | Gestion des dépendances | Oui     | Oui                    |
 | Dependabot  |                         |         |                        |
 |             |                         |         |                        |
 
 ### Renovate
-#### Presentation
-Renovate est un bot qui va venir scanner le code et vérifier les versions des dépendances. Il va ensuite générer des pull request pour suggérer les modificiations de dépendances par les dernières versions disponible. C'est ensuite au développeur de s'assurer que la modification fonctionne pour son programme et de l'accepter si besoin.
+#### Présentation
+Renovate est un bot qui va venir scanner le code et vérifier les versions des dépendances. Il va ensuite générer des pull requests pour suggérer les modifications de dépendances par les dernières versions disponibles. C'est ensuite au développeur de s'assurer que la modification fonctionne pour son programme et de l'accepter si besoin.
 #### Installation du bot
 ##### Ajout du bot à son dépôt GitHub
 L'installation du bot s'effectue de manière simple via la procédure suivante :
 1. Installer the Mend Renovate App sur son compte GitHub en allant sur [la page d'installation de Renovate App](https://github.com/apps/renovate) et cliquer sur "Install":
    ![image](https://user-images.githubusercontent.com/102745725/178965463-525a385e-d914-4309-aeb4-cb4358dc12bc.png)
-1. Sur la page suivante chosir le dépôt sur lequel installer Renovate
+2. Sur la page suivante choisir le dépôt sur lequel installer Renovate
 ![image](https://user-images.githubusercontent.com/102745725/178964980-df55dafd-f087-433a-90f7-986fa01c1ac0.png)
 ##### Configuration du bot
 > **Note**
 > Bien que le bot soit installé, il ne fonctionnera qu'après l'étape de configuration initiale.
 
-1. Aller dans la section `Pull Requests` de votre dépôt GitHub, et ouvrez la PR : `Configure Renovate`
+1. Aller dans la section `Pull Requests` de votre dépôt GitHub, et ouvrir la PR : `Configure Renovate`
 
 <img width="1500" alt="onboarding PR" src="https://user-images.githubusercontent.com/102745725/178965966-76aa3941-cac4-4df3-bd89-75b9f8002924.png">
 
 <img width="935" alt="onboarding content" src="https://user-images.githubusercontent.com/102745725/178966039-b11315b8-8c75-416b-9f18-c8109c17d0ab.png">
 
 > **Note**
-> Si vous souhaitez faire des modifications de la configuration par défaut, vous pouvez le faire en vous appuyant de la [documentation](https://github.com/renovatebot/renovate/tree/main/docs/usage/getting-started)
-1. Cliquer sur `Merge pull request`
+> Si vous souhaitez faire des modifications de la configuration par défaut, vous pouvez le faire en vous appuyant sur la [documentation](https://github.com/renovatebot/renovate/tree/main/docs/usage/getting-started)
+2. Cliquer sur `Merge pull request`
 
-Le bot est désormatis fonctionnel !
+Le bot est désormais fonctionnel !
 
-
-
-#### Actions realisés par le bot
-Le bot nous a généré des pull request suggérants de mettre à jour des dépendances.
+#### Actions réalisées par le bot
+Le bot nous a généré des pull requests suggérant de mettre à jour des dépendances.
 Un exemple est ci-dessous :
 ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/0863419e-f6f7-43c1-a711-b2fd470d75b1)
 
 #### Critiques et bilan
-La mission de ce bot est de suggérer des mise à jout de dépendances et c'est ce qu'il fait. Le problème est qu'il reste au dévelopeur de s'assurer que les modifications proposés seront compatibles avec le code déjà en place et ne causeront pas de bug. Afin d'automatiser ce processus, nous avons mit en place [l'automatisation des tests à chaque pull request](#Mise-en-place-d'automatisation-pour-une-pleine-intégration-des-bots-dans-la-boucle-DevOps).
+La mission de ce bot est de suggérer des mises à jour de dépendances et c'est ce qu'il fait. Le problème est qu'il reste au développeur de s'assurer que les modifications proposées seront compatibles avec le code déjà en place et ne causeront pas de bugs. Afin d'automatiser ce processus, nous avons mis en place [l'automatisation des tests à chaque pull request](#Mise-en-place-d'automatisation-pour-une-pleine-intégration-des-bots-dans-la-boucle-DevOps).
 
 ### Dependabot
 #### Qu'est-ce que Dependabot ?
-Dependabot est un outil d'automatisation de gestion des dépendances dans les projets logiciels. Il est conçu pour aider les développeurs à maintenir leurs projets à jour en surveillant les mises à jour des dépendances et en pull requests pour les mettre à jour automatiquement.
+Dependabot est un outil d'automatisation de gestion des dépendances dans les projets logiciels. Il est conçu pour aider les développeurs à maintenir leurs projets à jour en surveillant les mises à jour des dépendances et en ouvrant des pull requests pour les mettre à jour automatiquement.
 
 #### Fonctionnalités principales
 
@@ -67,7 +65,7 @@ Dependabot est un outil d'automatisation de gestion des dépendances dans les pr
 
 - **Maintien à jour** : En automatisant la gestion des dépendances, Dependabot permet de garder les projets logiciels à jour avec les dernières versions des bibliothèques et des frameworks.
 
-- **Réduction de la dette technique** : En évitant l'accumulation de dépendances obsolètes, Dependabot aide à réduire la dette technique et à maintenir un code base sain et sécurisé.
+- **Réduction de la dette technique** : En évitant l'accumulation de dépendances obsolètes, Dependabot aide à réduire la dette technique et à maintenir une codebase saine et sécurisée.
 
 - **Gain de temps** : En automatisant les tâches de gestion des dépendances, Dependabot libère du temps pour les développeurs, qui peuvent se concentrer sur des tâches plus créatives et à plus forte valeur ajoutée.
 
@@ -98,11 +96,11 @@ Une fois que Dependabot est activé et configuré sur votre dépôt GitHub, il c
 
 ## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
 #### Contexte
-Nous souhaitons mettre an place des automatisations pour compléter l'intégration de nos bots et augmenter le taux de résilience.
-#### Presentation de GitHub Action
-GitHub Actions est une plateforme d'automatisation des workflows intégrée à GitHub, permettant aux développeurs d'automatiser diverses tâches de développement logiciel telles que les tests, les déploiements et les notifications. Ce qui nous intéresse dans ce cas est la possibilité de mettre en place l'éxécution de nos fichiers tests à chaque pull request.
+Nous souhaitons mettre en place des automatisations pour compléter l'intégration de nos bots et augmenter le taux de résilience.
+#### Présentation de GitHub Actions
+GitHub Actions est une plateforme d'automatisation des workflows intégrée à GitHub, permettant aux développeurs d'automatiser diverses tâches de développement logiciel telles que les tests, les déploiements et les notifications. Ce qui nous intéresse dans ce cas est la possibilité de mettre en place l'exécution de nos fichiers de tests à chaque pull request.
 #### Mise en place d'une action
-1. Dans notre projet, nous créons un fichier github-actions.yaml dans le repertoire .github/workflows
+1. Dans notre projet, nous créons un fichier github-actions.yaml dans le répertoire .github/workflows
 2. Nous mettons le code ci-dessous dans le fichier
 ```yaml
 name: GitHub Actions Elie
@@ -129,18 +127,18 @@ jobs:
           sudo npm test
       - run: echo "🍏 This job's status is ${{ job.status }}."
 ```
-3. Nous faisons ensuite un commit de ce fichier dans une nouvelle branche de notre choix
-4. Nous faisons une pull request de notre nouvelle branche
-5. Dans l'interface de notre Repository nous cliquons sur le module *Actions*
+3. Nous faisons ensuite un commit de ce fichier dans une nouvelle branche de notre choix.
+4. Nous faisons une pull request de notre nouvelle branche.
+5. Dans l'interface de notre dépôt, nous cliquons sur le module *Actions*.
    ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/d6948d5f-eaeb-48db-a898-9cea26cfc3e5)
 
-7. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*
-8. Nous visualisons maintenant l'ensemble des exécutions dûes aux différentes pull requests
-9. Si nous cliquons sur une action, nous obtenons le détail de l'éxécution
+7. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*.
+8. Nous visualisons maintenant l'ensemble des exécutions dues aux différentes pull requests.
+9. Si nous cliquons sur une action, nous obtenons le détail de l'exécution.
    ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/f17c5597-3ec6-45d0-af41-c298bf8a9e0f)
 
-
 #### Critiques et bilan
-La mise en place de ce GitHub workflow répond bien à nos attentes et il nous permet aussi d'obtenir une visualisation du résultat de tests directement dans l'affichage des pull request. Ceci s'implifie grandement la prise de décision sur l'acceptation des pull request générés par les bots.
+La mise en place de ce GitHub workflow répond bien à nos attentes et nous permet également d'obtenir une visualisation du résultat des tests directement dans l'affichage des pull requests. Ceci simplifie grandement la prise de décision sur l'acceptation des pull requests générées par les bots.
 
 ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/a5dae8ae-9e86-4eba-9279-a3846a72d12f)
+
