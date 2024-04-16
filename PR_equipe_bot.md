@@ -3,7 +3,7 @@
 ## Résumé des différents types de bot
 //TODO faire le résumé très brefs des différents types de bot
 
-## Présentation pratique des bots mit en place par nos soins 
+## Présentation pratique des bots mis en place par nos soins 
 //TODO
 | Nom du bot  | Type de bot             | Gratuit | Mise en place réussite |
 |-------------|-------------------------|---------|------------------------|
@@ -15,7 +15,30 @@
 #### Presentation
 Renovate est un bot qui va venir scanner le code et vérifier les versions des dépendances. Il va ensuite générer des pull request pour suggérer les modificiations de dépendances par les dernières versions disponible. C'est ensuite au développeur de s'assurer que la modification fonctionne pour son programme et de l'accepter si besoin.
 #### Installation du bot
-//TODO procédure d'installation
+##### Ajout du bot à son dépôt GitHub
+L'installation du bot s'effectue de manière simple via la procédure suivante :
+1. Installer the Mend Renovate App sur son compte GitHub en allant sur [la page d'installation de Renovate App](https://github.com/apps/renovate) et cliquer sur "Install":
+   ![image](https://user-images.githubusercontent.com/102745725/178965463-525a385e-d914-4309-aeb4-cb4358dc12bc.png)
+1. Sur la page suivante chosir le dépôt sur lequel installer Renovate
+![image](https://user-images.githubusercontent.com/102745725/178964980-df55dafd-f087-433a-90f7-986fa01c1ac0.png)
+##### Configuration du bot
+> **Note**
+> Bien que le bot soit installé, il ne fonctionnera qu'après l'étape de configuration initiale.
+
+1. Aller dans la section `Pull Requests` de votre dépôt GitHub, et ouvrez la PR : `Configure Renovate`
+
+<img width="1500" alt="onboarding PR" src="https://user-images.githubusercontent.com/102745725/178965966-76aa3941-cac4-4df3-bd89-75b9f8002924.png">
+
+<img width="935" alt="onboarding content" src="https://user-images.githubusercontent.com/102745725/178966039-b11315b8-8c75-416b-9f18-c8109c17d0ab.png">
+
+> **Note**
+> Si vous souhaitez faire des modifications de la configuration par défaut, vous pouvez le faire en vous appuyant de la [documentation](https://github.com/renovatebot/renovate/tree/main/docs/usage/getting-started)
+1. Cliquer sur `Merge pull request`
+
+Le bot est désormatis fonctionnel !
+
+
+
 #### Actions realisés par le bot
 Le bot nous a généré des pull request suggérants de mettre à jour des dépendances.
 Un exemple est ci-dessous :
