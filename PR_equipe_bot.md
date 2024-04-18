@@ -10,7 +10,10 @@
 | Renovate    | Gestion des dépendances    | Oui     | Oui                    |
 | Dependabot  | Mise a jours de dépendance | Oui     | Oui                    |
 | Rultor      |                            | Oui     | Non                    |
-|             |                            |         |                        |
+| Errbot      | ChatOps                    | Oui     | Non                    |
+| Repairnator | Réparation de bug          | Oui     | Non                    |
+| Drone       | Test et déploiement        | Oui     | Non                    |
+
 
 ### Renovate
 #### Présentation
@@ -189,4 +192,123 @@ Rultor est un bot DevOps intelligent conçu pour automatiser les tâches manuell
 #### Bilan
 
 Pour conclure, Rultor est probablement l'un des bot de DevOps les plus complets disponible aujourd'hui. Malheureusement, la complexité de son installation et la documentation limitée et éparpillée ne nous a pas permis de le mettre en place.
+
+## Errbot
+#### Qu'est-ce que Errbot ?
+
+Errbot un bot open-source très polyvalent conçu pour être utilisé dans différents environnements de communication comme Slack, Discord, IRC, etc. Il est souvent utilisé dans des contextes de chatOps, de gestion de salons de discussion, et pour des applications de sécurité domestique.
+
+#### Fonctionnalité : 
+
+Intégration avec différents services de messagerie : Errbot peut être intégré à des plateformes populaires telles que Slack, Discord, IRC, HipChat, etc., ce qui lui permet d'interagir avec les utilisateurs sur ces canaux.
+
+Gestion des commandes : Errbot peut être configuré pour répondre à des commandes spécifiques entrées par les utilisateurs. Par exemple, vous pouvez définir des commandes pour obtenir des informations, déclencher des actions ou interagir avec des services externes.
+
+Extensions et plugins : Errbot dispose d'un système d'extensions et de plugins qui permet aux développeurs d'étendre ses fonctionnalités de manière modulaire. Cela permet d'ajouter des fonctionnalités personnalisées selon les besoins spécifiques de l'utilisateur.
+
+Automatisation des tâches : En utilisant des scripts Python ou des plugins prédéfinis, Errbot peut automatiser des tâches telles que la gestion des déploiements, la surveillance des systèmes, l'envoi de notifications, etc.
+
+Intégration avec des API externes : Errbot peut se connecter à des API externes pour récupérer des données en temps réel, effectuer des actions sur des services tiers, ou encore intégrer des fonctionnalités spécifiques à un service ou une application.
+
+Sécurité et contrôle des accès : Errbot offre des fonctionnalités de sécurité avancées telles que la gestion des autorisations d'accès aux commandes, la gestion des rôles et des privilèges, et la sécurité des données échangées.
+
+
+#### Critique :
+
+##### Problèmes :
+
+Difficulté à installé le bot dû à l'environnement python dans lequel il tourne. 
+Documentation plutôt clair mais il nous manque quelques informations de compréhension et de fonctionnement global.
+
+##### Avantages :
+
+Polyvalent et compatible avec grand nombre d'environnements de communication.
+
+#### Bilan :
+
+Pour conclure, Errbot est un bot compatible avec grand nombre d'environnements de communication et permet d'effectuer des commandes aisément au sein de ces environnements. Cependant il manque un schéma global de la communication et du fonctionnement du bot.
+
+
+## Repairnator : 
+#### Qu'est ce que Repairnator ?
+
+Repairnator est le premier repair bot capable de faire de la réparation automatique de bugs informatiques à grande échelle. il s'agit d'un logiciel efficace et autonome qui sauve des erreurs de code les autres logiciels. Une solution en open source mise à disposition de tous les développeurs.
+
+#### Fonctionnalités clé de Repairnator :
+
+Détection automatique de bugs :
+Repairnator est conçu pour détecter automatiquement les bugs dans les projets open-source hébergés sur GitHub. Il surveille en permanence les dépôts de code source et identifie les problèmes signalés, les erreurs de compilation, les échecs de test ou d'autres problèmes similaires.
+
+Création de Pull Requests (PR) :
+Une fois qu'un bug est détecté, Repairnator génère automatiquement une Pull Request (PR) pour proposer une correction. Il utilise des techniques automatisées telles que le patching et le rétro-ingénierie du code pour proposer une solution au problème identifié.
+
+Intégration avec les outils de CI/CD :
+Repairnator peut être intégré dans des pipelines de livraison continue (CI/CD) pour automatiser le processus de détection et de correction des bugs. Il s'intègre souvent avec des outils tels que Travis CI, Jenkins, ou GitHub Actions pour gérer ce processus de manière fluide.
+
+Analyse et reporting :
+Repairnator fournit des analyses détaillées sur les problèmes détectés, les corrections proposées et les résultats des tests. Ces informations sont essentielles pour les développeurs et les équipes de qualité logicielle afin de comprendre les améliorations apportées par le système et les éventuelles améliorations à apporter.
+
+Support des langages de programmation :
+Repairnator prend en charge différents langages de programmation couramment utilisés dans les projets open-source, tels que Java, JavaScript, Python, etc. Il est capable de traiter divers types de bugs dans ces langages.
+
+Communauté et développement ouvert :
+Repairnator est un projet open-source soutenu par une communauté active de chercheurs et de développeurs. Cela signifie que ses fonctionnalités et son efficacité continuent de s'améliorer grâce aux contributions et aux retours d'expérience de la communauté.
+
+#### Critique
+
+##### Problèmes :
+
+Projet complexe à mettre en place, comme pour Errbot il nous manque quelques informations de compréhension et de fonctionnement global.
+
+##### Avantages :
+
+Une fois installé permet au développeur de gagné en efficacité, car il est capable de réparer un projet.
+
+#### Bilan :
+
+Pour conclure, Repairnator offre une solution automatisée et intelligente pour détecter, corriger et améliorer les bugs dans les projets open-source, ce qui contribue à accélérer le processus de développement logiciel et à garantir la qualité du code produit.
+
+
+## Drone :
+#### Qu'est ce que Drone ?
+
+Drone est un système open-source de CI/CD (Continuous Integration/Continuous Deployment) qui automatise les processus de construction, de test et de déploiement des applications logicielles. 
+
+#### Fonctionnalités clé de Drone :
+
+Automatisation du CI/CD :
+Drone automatise les étapes de construction (build), de test et de déploiement de votre application à chaque modification du code source. Cela garantit une intégration continue et une livraison continue, ce qui permet de détecter rapidement les erreurs et de livrer des versions fonctionnelles de l'application de manière efficace.
+
+Intégration avec les outils de versionnement :
+Drone se connecte aux plateformes de gestion de versions comme GitHub, GitLab, Bitbucket, etc. Il surveille les changements dans les dépôts de code source et déclenche automatiquement les pipelines CI/CD en fonction de ces modifications.
+
+Définition des pipelines avec YAML :
+Les pipelines CI/CD dans Drone sont définis à l'aide de fichiers de configuration YAML (.drone.yml). Ces fichiers décrivent les étapes du pipeline, y compris les commandes de build, de test, de déploiement et les notifications à envoyer en cas de succès ou d'échec.
+
+Support multi-langage et multi-environnement :
+Drone prend en charge une variété de langages de programmation et d'environnements, ce qui le rend flexible pour les projets divers. Il offre des plugins pour des actions spécifiques telles que la construction de conteneurs Docker, le déploiement sur des serveurs, l'envoi de notifications, etc.
+
+Parallélisme et scalabilité :
+Drone peut exécuter des étapes de pipeline en parallèle, ce qui accélère le processus global. De plus, il peut être configuré pour s'intégrer à des environnements de cluster et à des services de conteneurisation pour une exécution scalable des pipelines.
+
+Gestion des secrets et des variables d'environnement :
+Drone offre des mécanismes sécurisés pour gérer les secrets (mots de passe, clés API, etc.) et les variables d'environnement nécessaires aux étapes du pipeline, assurant ainsi la sécurité des données sensibles.
+
+#### Critique
+
+##### Problèmes :
+
+Projet complexe à mettre en place, comme pour Errbot il nous manque quelques informations de compréhension et de fonctionnement global. Mais surtout il est payant. Nous avons commencé l'installation, mais avons été bloqués dû au paiement.
+
+##### Avantages :
+
+Gain majeure en temps pour le test et le déploiement.
+
+#### Bilan :
+
+Pour conclure, Drone est un outil puissant pour l'automatisation des processus CI/CD dans les projets de développement logiciel. Ses fonctionnalités de configuration flexible, d'intégration avec les outils populaires et de gestion sécurisée en font un choix populaire parmi les équipes de développement modernes.
+
+
+
+
 
