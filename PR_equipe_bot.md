@@ -13,6 +13,7 @@
 | Errbot      | ChatOps                    | Oui     | Non                    |
 | Repairnator | Réparation de bug          | Oui     | Non                    |
 | Drone       | Test et déploiement        | Non     | Non                    |
+| DevopsBot   | ChatOps                    | Oui     | Non                    |
 
 
 ### Renovate
