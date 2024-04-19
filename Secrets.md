@@ -1,4 +1,4 @@
-# Tuto : Secrets avec docker-compose
+# Tutoriel : Secrets avec docker-compose
 
 ## Introduction
 
@@ -16,11 +16,11 @@ Ensuite, nous pouvons créer des secrets de la manière suivante
 ```bash
 $ echo "SuP3rS3cR5tP@S5w0rD" | docker secret create db_password -
 ```
-Avec ici `db_password` l'identifiant du secret, et `SuP3rS3cR5tP@S5w0rD` le secret.
+Avec ici `db_password` l'identifiant du secret, et `SuP3rS3cRetP@S5w0rD` le secret.
 
 Il est aussi possible de créer des secrets dans des fichiers, mais attention à ne pas les rendre publics par erreur!
 ```bash
-$ echo "SuP3rS3cR5tP@S5w0rD" > db_password.txt
+$ echo "SuP3rS3cRetP@S5w0rD" > db_password.txt
 ```
 
 ### Utiliser les secrets dans le `docker-compose.yaml`
@@ -51,3 +51,10 @@ Et voilà! Nos secrets sont maintenant passés aux containers, tout en étant mi
 ## Conclusion
 
 L'utilisation de la fonctionnalité de secrets de docker nous permet donc d'ajouter facilement une couche de sécurité à notre application. Toutefois, même si les secrets sont effectivement encryptés en dehors des containers, ils restent en tant que variable d'environnement en clair à l'intérieur de ceux-ci. Une faille dans une image docker pourrait alors permettre à un attaquant de tout de même récupérer nos données sensibles.
+
+##  Authors
+
+ - Noam GEFFROY
+ - Pol JAOUEN
+ - Stevan METAYER
+ - Fanny SHEHABI
