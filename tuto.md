@@ -1,3 +1,5 @@
+Authors : Alexandre Lecomte et Sterenn Le Hir
+
 # Introduction
 Nous avons choisi de travailler sur le projet dockerisé suivant : [Site internet](https://github.com/SterennLeHir/Website). Il correspond à un site Internet recensant des associations rennaises avec leurs informations telles que les membres, les comptes rendus, etc.
 Ce projet suit une architecture de micro-services (en mode production) avec : 
@@ -32,18 +34,33 @@ Etant donné que nginx récupère les fichiers du front, nous avons modifié le 
 
 Nous devons ensuite gérer les redirections. Pour cela, nous allons modifier le fichier de configuration du serveur web, nginx.conf. Premièrement, nous utilisons la directive `split_clients` de Nginx. Elle permet de diviser les utilisateurs selon une clé de répartition et de stocker le résultat de la répartition dans une variable. La syntaxe générale de split_clients est `split_clients key $variable {...}`, où key est la clé utilisée pour calculer la répartition et $variable est la variable dans laquelle le résultat de la répartition sera stocké. Nous souhaitons les diviser selon leur adresse IP, ce sera donc la clé et la variable s'appellera "variant". Dans le bloc de code, nous allons introduire les règles de répartition. Nous souhaitons que 5% des utilisateurs aient la version 2 et le reste la version 1. La syntaxe pour les règles est la suivante : `proportion valeur`;
 Dans notre situation nous aurons 5% d'utilisateurs sur le variant 1 et 95% sur le variant 2. Nous avons donc le bloc :
-`5% 1;
-95% 2;`
+`5% 2;
+95% 1;`
 A la place du 95%, nous pouvons utiliser le wildcard "*" signifiant "le reste des utilisateurs". 
 Pour la clé de répartition, n'utilisant qu'un ordinateur, nous l'avons modifié pour voir les changements. Nous prenons en compte l'adesse IP, l'agent utilisateur HTTP et la date. Nous avons donc cette commande : 
 ```
 split_clients "app${remote_addr}${http_user_agent}${date_gmt}" $variant {
-        50% "1";
-        * "2";
+        5% "2";
+        * "1";
+}
+```
+Pour nos tests, nous avons répartis équitablement les utilisateurs pour qu'on puisse se voir attribuer la version 1 ou 2. Avec le variant, nous pouvons maintenant récupérer le dossier avec les fichiers de la bonne version. Initialement, nous nous placions dans le dossier /usr/share/nginx/html, mais maintenant nous nous plaçons dans /usr/share/nginx/html$variant. $variant est égal à 1 ou 2 donc on retrouve bien les dossiers des versions.
+En relançant plusieurs fois le projet, nous avons pu voir qu'en moyenne, une fois sur deux nous avions la version 1 et sinon la version 2. 
+
+### Intégration de la persistance des données
+
+En rechargant le site internet, on remarque qu'on change souvent de versions. C'est problématique car un utilisateur utilisant le site Internet devrait toujours être sur la même version. Nous devons donc garder en mémoire la version de l'utilisateur, passant par la gestion des cookies. Nous allons ajouter un cookie ayant la valeur du variant : 
+`add_header Set-Cookie "variant=$variant; Path=/; Max-Age=604800";` 
+Ensuite, avant d'intégrer notre variant dans le nom du dossier : /usr/share/nginx/html$variant, nous vérifions si un cookie est défini. S'il l'est nous affections la valeur du cookie à la variable "variant".
+```
+if ($cookie_variant) {
+            set $variant $cookie_variant;
 }
 ```
 
-### Intégration de la persistance des données
+Dans le cas où le cookie est vide, on passera dans la directive `split_clients` vue précédemment. Nous avons pu tester en rechargeant de nombreuses fois la page (avec une répartition 50/50) et cela fonctionnait.
+
+/!\ Si l'utilisateur supprime ses cookies, il pourra avoir une autre version.
 
 ## Modification des fichiers d'un container simple
 Ici, nous créons une version différente d'un container, nous choisissons toujours le front (pour voir le changement rapidement) mais cette fois en mode développement quand le front n'est pas contenu dans nginx.
