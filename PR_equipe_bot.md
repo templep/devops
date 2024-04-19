@@ -56,8 +56,9 @@ Dependabot est un outil d'automatisation de gestion des dépendances dans les pr
 #### Fonctionnalités principales
 
 - **Surveillance des dépendances** : Dependabot surveille les fichiers de configuration des dépendances (comme `package.json`) pour détecter les mises à jour disponibles.
-
+![image](https://github.com/ESIR2-S8-DevOps/devops/blob/main/pictures/securityAlert.png)
 - **Ouverture de pull requests** : Lorsqu'une mise à jour est détectée, Dependabot ouvre automatiquement une demande de tirage (pull request) avec les modifications nécessaires pour mettre à jour les dépendances.
+![image](https://github.com/ESIR2-S8-DevOps/devops/blob/main/pictures/PullRequest.png)
 
 - **Gestion des conflits** : Dependabot est capable de gérer les conflits de fusion (merge conflicts) qui peuvent survenir lors de la mise à jour des dépendances, en proposant des solutions ou en les résolvant automatiquement si possible.
 
