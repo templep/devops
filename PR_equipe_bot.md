@@ -160,7 +160,7 @@ La mise en place de ce GitHub workflow répond bien à nos attentes et nous perm
 ## Rultor
 #### Qu'est-ce que Rultor ?
 
-Rultor est un bot DevOps intelligent conçu pour automatiser les tâches manuelles répétitives et optimiser vos processus de développement logiciel. Il scanne votre code, vérifie les versions des dépendances et génère des pull requests pour proposer les mises à jour nécessaires.
+Rultor est un bot DevOps conçu pour automatiser les tâches manuelles répétitives et optimiser vos processus de développement logiciel. Il scanne votre code, vérifie les versions des dépendances et génère des pull requests pour proposer les mises à jour nécessaires.
 
 #### Rultor vous aide à :
 
