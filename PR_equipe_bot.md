@@ -333,11 +333,8 @@ DevopsBot peut aider à gérer les incidents en fournissant des alertes, en orch
 
 ##### Problèmes :
 
-Complexité de la configuration :
-Configurer et personnaliser DevopsBot pour répondre aux besoins spécifiques de chaque équipe peut être complexe et nécessiter une expertise approfondie.
 
-Dépendance aux intégrations tierces : 
-Son efficacité dépend souvent de l'intégration réussie avec les outils DevOps existants, ce qui peut poser des défis si les API sont complexes ou peu documentées.
+Pour DevopsBot, les problèmes rencontrées sont liées à la compréhension de son fonctionnement global et à sa configuration notamment avec peu de documentation.
 
 ##### Avantages :
 
