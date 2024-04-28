@@ -1,15 +1,14 @@
 # Les bots dans le DevOps
 
 ## Résumé des différents types de bot
-//TODO faire le résumé très bref des différents types de bot
+Nous allons vous présenter les différents bots que nous avons découverts pour le cycle DevOps. Parmi eux, des bots automatisant la gestion des dépendances, la réparation des bugs, le déploiement et l'intégration, avec des tests automatisés. Nous avons également identifié des outils ChatOps pour la diffusion de notifications.
 
 ## Présentation pratique des bots mis en place par nos soins 
-//TODO
 | Nom du bot  | Type de bot                | Gratuit | Mise en place réussie |
 |-------------|----------------------------|---------|------------------------|
 | Renovate    | Gestion des dépendances    | Oui     | Oui                    |
 | Dependabot  | Mise a jours de dépendance | Oui     | Oui                    |
-| Rultor      |                            | Oui     | Non                    |
+| Rultor      | Automatisation DevOps      | Oui     | Non                    |
 | Errbot      | ChatOps                    | Oui     | Non                    |
 | Repairnator | Réparation de bug          | Oui     | Non                    |
 | Drone       | Test et déploiement        | Non     | Non                    |
