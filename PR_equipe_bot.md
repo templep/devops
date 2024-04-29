@@ -47,7 +47,7 @@ Un exemple est ci-dessous :
 ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/0863419e-f6f7-43c1-a711-b2fd470d75b1)
 
 #### Critiques et bilan
-La mission de ce bot est de suggérer des mises à jour de dépendances et c'est ce qu'il fait. Le problème est qu'il reste au développeur de s'assurer que les modifications proposées seront compatibles avec le code déjà en place et ne causeront pas de bugs. Afin d'automatiser ce processus, nous avons mis en place [l'automatisation des tests à chaque pull request](#Mise-en-place-d'automatisation-pour-une-pleine-intégration-des-bots-dans-la-boucle-DevOps).
+La mission de ce bot est de suggérer des mises à jour de dépendances et c'est ce qu'il fait. Le problème est qu'il reste au développeur de s'assurer que les modifications proposées seront compatibles avec le code déjà en place et ne causeront pas de bugs. Afin d'automatiser ce processus, nous avons mis en place [l'automatisation des tests à chaque pull request](#Mise-en-place-d\'automatisation-pour-une-pleine-intégration-des-bots-dans-la-boucle-DevOps).
 
 ### Dependabot
 #### Qu'est-ce que Dependabot ?
