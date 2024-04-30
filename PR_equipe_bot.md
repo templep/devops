@@ -108,54 +108,6 @@ Une fois que Dependabot est activé et configuré sur votre dépôt GitHub, il c
 #### Critiques et bilan
 Nous avons ici mis en place un bot native à GitHub capable d'analyser les dépendances comme le bot précédent et de proposer par l'intermédiaire de pull request leur mise à jour en fonction des anomalies de sécurité détecter. Encore une fois ses mises à jour ne se font que si l'utilisateur les accepte pour éviter de générer des problèmes. De plus la sécurité est un véritable plus que ce bot apporte notamment pour détecter et corriger les éventuelles CVE qui ont été déployer.
 
-## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
-#### Contexte
-Nous souhaitons mettre en place des automatisations pour compléter l'intégration de nos bots et augmenter le taux de résilience.
-#### Présentation de GitHub Actions
-GitHub Actions est une plateforme d'automatisation des workflows intégrée à GitHub, permettant aux développeurs d'automatiser diverses tâches de développement logiciel telles que les tests, les déploiements et les notifications. Ce qui nous intéresse dans ce cas est la possibilité de mettre en place l'exécution de nos fichiers de tests à chaque pull request.
-#### Mise en place d'une action
-1. Dans notre projet, nous créons un fichier github-actions.yaml dans le répertoire .github/workflows
-2. Nous mettons le code ci-dessous dans le fichier
-```yaml
-name: GitHub Actions Elie
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [pull_request]
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - name: Run tests
-        run: |
-          cd back
-          sudo npm install
-          sudo npm test
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-```
-3. Nous faisons ensuite un commit de ce fichier dans une nouvelle branche de notre choix.
-4. Nous faisons une pull request de notre nouvelle branche.
-5. Dans l'interface de notre dépôt, nous cliquons sur le module *Actions*.
-   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/d6948d5f-eaeb-48db-a898-9cea26cfc3e5)
-
-7. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*.
-8. Nous visualisons maintenant l'ensemble des exécutions dues aux différentes pull requests.
-9. Si nous cliquons sur une action, nous obtenons le détail de l'exécution.
-   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/f17c5597-3ec6-45d0-af41-c298bf8a9e0f)
-
-#### Critiques et bilan
-La mise en place de ce GitHub workflow répond bien à nos attentes et nous permet également d'obtenir une visualisation du résultat des tests directement dans l'affichage des pull requests. Ceci simplifie grandement la prise de décision sur l'acceptation des pull requests générées par les bots.
-
-![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/a5dae8ae-9e86-4eba-9279-a3846a72d12f)
-
 ## Rultor
 #### Qu'est-ce que Rultor ?
 
@@ -351,7 +303,53 @@ DevopsBot enregistre souvent les interactions et les actions effectuées, ce qui
 Dans l'ensemble, DevopsBot offre un moyen puissant d'automatiser les processus DevOps, d'améliorer la collaboration et la traçabilité, et de réduire les délais de déploiement et de résolution des incidents. Cependant, il nécessite une configuration et une gestion appropriées pour maximiser ses avantages tout en minimisant les défis potentiels.
 
 
+## Mise en place d'automatisation pour une pleine intégration des bots dans la boucle DevOps
+#### Contexte
+Nous souhaitons mettre en place des automatisations pour compléter l'intégration de nos bots et augmenter le taux de résilience.
+#### Présentation de GitHub Actions
+GitHub Actions est une plateforme d'automatisation des workflows intégrée à GitHub, permettant aux développeurs d'automatiser diverses tâches de développement logiciel telles que les tests, les déploiements et les notifications. Ce qui nous intéresse dans ce cas est la possibilité de mettre en place l'exécution de nos fichiers de tests à chaque pull request.
+#### Mise en place d'une action
+1. Dans notre projet, nous créons un fichier github-actions.yaml dans le répertoire .github/workflows
+2. Nous mettons le code ci-dessous dans le fichier
+```yaml
+name: GitHub Actions Elie
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [pull_request]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: Run tests
+        run: |
+          cd back
+          sudo npm install
+          sudo npm test
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+```
+3. Nous faisons ensuite un commit de ce fichier dans une nouvelle branche de notre choix.
+4. Nous faisons une pull request de notre nouvelle branche.
+5. Dans l'interface de notre dépôt, nous cliquons sur le module *Actions*.
+   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/d6948d5f-eaeb-48db-a898-9cea26cfc3e5)
 
+7. Nous cliquons sur le menu de gauche, plus précisément sur *GitHub Actions Elie*.
+8. Nous visualisons maintenant l'ensemble des exécutions dues aux différentes pull requests.
+9. Si nous cliquons sur une action, nous obtenons le détail de l'exécution.
+   ![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/f17c5597-3ec6-45d0-af41-c298bf8a9e0f)
+
+#### Critiques et bilan
+La mise en place de ce GitHub workflow répond bien à nos attentes et nous permet également d'obtenir une visualisation du résultat des tests directement dans l'affichage des pull requests. Ceci simplifie grandement la prise de décision sur l'acceptation des pull requests générées par les bots.
+
+![image](https://github.com/ESIR2-S8-DevOps/devops/assets/49646276/a5dae8ae-9e86-4eba-9279-a3846a72d12f)
 
 
 
