@@ -86,7 +86,7 @@ Ffuf est un outil de fuzzing de contenu web écrit en go. Il est principalement 
 Ffuf utilise des listes de mots (wordlists) pour générer des requêtes HTTP personnalisées, qu'il envoie au serveur cible. Il analyse ensuite les réponses du serveur (200, 401, 404...) pour détecter des réponses inhabituelles ou des codes d'erreur qui pourraient indiquer la présence de vulnérabilités ou de configurations incorrectes.
 
 ### Mise en place
-Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la varibale d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\. Une fois Go et Ffuf installé, on peut désormais installer une première liste de mots-clés (wordlist). Cette dernière servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf. On peut dans un premier temps récupérer des wordlists assez générales et basiques en executant les commandes suivantes (trouvables sur Ffuf.me).
+Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la varibale d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\ . Une fois Go et Ffuf installé, on peut désormais installer une première liste de mots-clés (wordlist). Cette dernière servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf. On peut dans un premier temps récupérer des wordlists assez générales et basiques en executant les commandes suivantes (trouvables sur Ffuf.me).
 ```
 cd ~
 mkdir wordlists
@@ -98,6 +98,19 @@ wget http://ffuf.me/wordlist/subdomains.txt
 Une fois ceci fait, on est prêt à lancer l'outil.
 
 ### Utilisation
+
+Pour utiliser l'outil, il ne reste plus qu'à lancer un terminal et prompter la commande suivante
+```
+.\ffuf -w .\chemin\vers\ma\wordlist\mawordlist.txt -u url_de_mon_site/FUZZ
+```
+
+Dans cet exemple, ffuf effectuera autant de requêtes GET qu'il y a de mots dans la wordlist, à l'URL spécifié, en remplaçant à chaque fois le mot-clé "FUZZ" par un mot de la wordlist.
+
+Si la section que vous essayer de fuzzer nécessite une authentification et que le site web vous fournit un token d'authentification, vous pouvez réutiliser ce token dans la commande comme suit (-H ajoute un header à la requête, et permet donc de joindre le token).
+
+```
+.\ffuf -w .\chemin\vers\ma\wordlist\mawordlist.txt -u url_de_mon_site/zone_accessible_avec_token/FUZZ -H "Authorization: VOTRE_TOKEN_D_ACCES" 
+```
 
 ## Test du Back-End
 ### Présentation de Jazzer.js
