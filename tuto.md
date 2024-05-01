@@ -80,10 +80,23 @@ On choisit de tester notre Front-end avec l'outil [Ffuf](https://github.com/ffuf
 
 ## Test du Front-End
 ### Présentation de ffuf
-Ffuf est un outil, écrit en go, qui permet d'envoyer tout un tas de requetes http pseudo-aléatoires à un site web et d'observer les réponses reçues : code de retour (ex : 200 OK, 401 Unauthorized, 404 Not Found, etc.) + données renvoyées (page web, fichier...).
+
+Ffuf est un outil de fuzzing de contenu web écrit en go. Il est principalement utilisé pour découvrir des ressources cachées ou non référencées sur un site web, pour tester la présence de répertoires et de fichiers sensibles, ainsi que pour identifier des points d'entrée potentiels pour des attaques.
+
+Ffuf utilise des listes de mots (wordlists) pour générer des requêtes HTTP personnalisées, qu'il envoie au serveur cible. Il analyse ensuite les réponses du serveur (200, 401, 404...) pour détecter des réponses inhabituelles ou des codes d'erreur qui pourraient indiquer la présence de vulnérabilités ou de configurations incorrectes.
 
 ### Mise en place
-Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la varibale d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\. Une fois Go et Ffuf installé, on peut désormais installer un premier dictionnaire de mots-clés. Ce dernier servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf.  
+Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la varibale d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\. Une fois Go et Ffuf installé, on peut désormais installer une première liste de mots-clés (wordlist). Cette dernière servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf. On peut dans un premier temps récupérer des wordlists assez générales et basiques en executant les commandes suivantes (trouvables sur Ffuf.me).
+```
+cd ~
+mkdir wordlists
+cd wordlists
+wget http://ffuf.me/wordlist/common.txt
+wget http://ffuf.me/wordlist/parameters.txt
+wget http://ffuf.me/wordlist/subdomains.txt
+```
+Une fois ceci fait, on est prêt à lancer l'outil.
+
 ### Utilisation
 
 ## Test du Back-End
