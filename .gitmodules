@@ -2,3 +2,7 @@
 	path = Dev_ops
 	url = https://github.com/Joekingu/Dev_Ops.git
 	branch = prometheus
+[submodule "Monitoring"]
+	path = Monitoring
+	url = https://github.com/Joekingu/Dev_Ops.git
+	branch = prometheus
