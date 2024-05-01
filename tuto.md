@@ -72,3 +72,21 @@ Nous conservons les deux dossiers v1 et v2 précédent. On va cependant modifier
 Nous allons ensuite modifier le docker-compose, pour créer un container par version, 
 
 # Fuzzing
+
+Le fuzzing est une technique de test automatique qui consiste à injecter des données plus ou moins aléatoires dans un système pour détecter des bugs, des failles de sécurité ou des comportements inattendus. L'objectif est de pousser le logiciel à ses limites et de découvrir des vulnérabilités potentielles qui pourraient être exploitées par des attaquants ou causer des problèmes de fonctionnement.
+
+
+On choisit de tester notre Front-end avec l'outil [Ffuf](https://github.com/ffuf/ffuf) et le code de notre Back-end avec l'outil [Jazzer.js](https://github.com/CodeIntelligenceTesting/jazzer.js?hsCtaTracking=70b51c80-f6c2-4cbd-ad16-a5633f6c341f%7C93f2aec2-9b6f-497d-aff2-019a1c8eaa4a). 
+
+## Test du Front-End
+### Présentation de ffuf
+Ffuf est un outil, écrit en go, qui permet d'envoyer tout un tas de requetes http pseudo-aléatoires à un site web et d'observer les réponses reçues : code de retour (ex : 200 OK, 401 Unauthorized, 404 Not Found, etc.) + données renvoyées (page web, fichier...).
+
+### Mise en place
+Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la varibale d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\. Une fois Go et Ffuf installé, on peut désormais installer un premier dictionnaire de mots-clés. Ce dernier servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf.  
+### Utilisation
+
+## Test du Back-End
+### Présentation de Jazzer.js
+### Mise en place
+### Utilisation
