@@ -98,8 +98,17 @@ Dans cet exemple, ffuf effectuera autant de requêtes GET qu'il y a de mots dans
 Si la section que vous essayer de fuzzer nécessite une authentification et que le site web vous fournit un token d'authentification, vous pouvez réutiliser ce token dans la commande comme suit (-H ajoute un header à la requête, et permet donc de joindre le token).
 
 ```
-.\ffuf -w .\chemin\vers\ma\wordlist\mawordlist.txt -u url_de_mon_site/zone_accessible_avec_token/FUZZ -H "Authorization: VOTRE_TOKEN_D_ACCES" 
+.\ffuf -w .\chemin\vers\ma\wordlist\mawordlist.txt -u url_de_mon_site/zone_accessible_avec_token/FUZZ -H "Authorization: Bearer VOTRE_TOKEN_D_ACCES" 
 ```
+
+### Notre test
+On a donc lancé notre application Website puis lancé la commande
+```
+.\ffuf -w .\les_wordlists\customwords.txt -u http://localhost:4200/FUZZ -H "Authorization: Bearer VOTRE_TOKEN_D_ACCES" 
+```
+Or, on s'est rendu compte que notre front-end redirigeait toutes les requetes de pages incconues vers une page 404 sans renvcoyer le code d'erreur 404. Alors tous les résultats nous ont donné un code de retour 200 car on atteint bien une page, la 404 (cela est du à la configuration de nos routes dans Angular et une lacune concernant la gestion des codes de retour dans notre serveur nginx)
+
+Donc pour tester l'outil, on s'est replié sur un autre site web.
 
 ## Test du Back-End
 ### Présentation de Jazzer.js
