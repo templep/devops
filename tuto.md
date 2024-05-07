@@ -106,13 +106,13 @@ On a donc lancé notre application Website puis lancé la commande
 ```
 .\ffuf -w .\les_wordlists\customwords.txt -u http://localhost:4200/FUZZ -H "Authorization: Bearer VOTRE_TOKEN_D_ACCES" 
 ```
-Or, on s'est rendu compte que notre front-end redirigeait toutes les requetes de pages incconues vers une page 404 sans renvcoyer le code d'erreur 404. Alors tous les résultats nous ont donné un code de retour 200 car on atteint bien une page, la 404 (cela est dû à la configuration de nos routes dans Angular et une lacune concernant la gestion des codes de retour dans notre serveur nginx).
+Or, on s'est rendu compte que notre front-end redirigeait toutes les requetes de pages incconues vers une page 404 sans renvoyer le code d'erreur 404. Alors tous les résultats nous ont donné un code de retour 200 car on atteint bien une page, la 404 (cela est dû à la configuration de nos routes dans Angular et une lacune concernant la gestion des codes de retour dans notre serveur nginx).
 
 ### Autre méthode
 
 Ffuf permet donc d'automatiser la tâche de fuzzing mais on peut aussi manuellement envoyer des données aléatoires ou pseudo-aléatoires dans notre application. On peut par exemple essayer d'envoyer des lettres dans des formulaires qui devraient contenir des chiffres et observer le résultat.
 
-On s'est alors rendu compte que dans le champ pour modifier l'âge on pouvait écrire autre chose que des caractères chiffrés. Ainsi, si on écrit ":)" dans "âge" on aura ":) ans" d'affiché sur la page des informations de notre compte personnel.
+On s'est alors rendu compte que dans le champ pour modifier l'âge on pouvait écrire autre chose que des caractères chiffrés. Ainsi, si on écrit ":)" dans "âge" on aura ":) ans" d'affiché sur la page des informations de notre compte personnel. Cette méthode est donc efficace pour détecter des bugs auxquels on aurait pas pensé.
 
 ## Test du Back-End
 [PARTIE DE GUILLAUME]
