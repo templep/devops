@@ -75,7 +75,7 @@ Ffuf est un outil de fuzzing de contenu web écrit en go. Il est principalement 
 Ffuf utilise des listes de mots (wordlists) pour générer des requêtes HTTP personnalisées, qu'il envoie au serveur cible. Il analyse ensuite les réponses du serveur (200, 401, 404...) pour détecter des réponses inhabituelles ou des codes d'erreur qui pourraient indiquer la présence de vulnérabilités ou de configurations incorrectes.
 
 ### Mise en place
-Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la varibale d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\ . Une fois Go et Ffuf installé, on peut désormais installer une première liste de mots-clés (wordlist). Cette dernière servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf. On peut dans un premier temps récupérer des wordlists assez générales et basiques en executant les commandes suivantes (trouvables sur Ffuf.me).
+Pour utiliser Ffuf il faut d'abord l'installer depuis le repo Github donné plus haut en hyperlien. En plus de cela, il faudra installer le langage [Go](https://go.dev/doc/install) sur sa machine afin d'executer l'outil; et ne pas oublier de configurer la variable d'environnement correspondante si ce n'est pas déjà fait automatiquement /!\ . Une fois Go et Ffuf installés, on peut désormais installer une première liste de mots-clés (wordlist). Cette dernière servira à la génération des différents URLs auxquels on essaiera d'accéeder depuis notre site avec Ffuf. On peut dans un premier temps récupérer des wordlists assez générales et basiques en executant les commandes suivantes (trouvables sur Ffuf.me).
 ```
 cd ~
 mkdir wordlists
@@ -110,9 +110,9 @@ Or, on s'est rendu compte que notre front-end redirigeait toutes les requetes de
 
 ### Autre méthode
 
-Ffuf permet donc d'automatiser la tâche de fuzzing mais on peut aussi manuellement envoyer des données aléatoires ou pseudo-aléatoires dans notre application. On peut par exemple essayer de envoyer des lettres dans des formulaires qui devraient contenir des chiffres et observer le résultat.
+Ffuf permet donc d'automatiser la tâche de fuzzing mais on peut aussi manuellement envoyer des données aléatoires ou pseudo-aléatoires dans notre application. On peut par exemple essayer d'envoyer des lettres dans des formulaires qui devraient contenir des chiffres et observer le résultat.
 
-On s'est alors rendu compte que dans le champ pour modifier l'âge on pouvait écrire autre chose que des caractères chiffrés.
+On s'est alors rendu compte que dans le champ pour modifier l'âge on pouvait écrire autre chose que des caractères chiffrés. Ainsi, si on écrit ":)" dans "âge" on aura ":) ans" d'affiché sur la page des informations de notre compte personnel.
 
 ## Test du Back-End
 [PARTIE DE GUILLAUME]
