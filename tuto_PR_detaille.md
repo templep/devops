@@ -1,6 +1,47 @@
-# Tutorial : A Documented Pull Request
+# Documented Pull Request: an example
 ---
-# Make the Doodlestudent project works!
+# Run the doodle student project
+
+The following will help you make the application run and understand how to launch it.
+
+## Some precision about the project
+The project is decomposed into two parts: the front in js, and the back that makes different modules communicate together.
+This document provides a quick way to run the application, but it will not deploy the complete application into several containers.
+Only the back part is using containers here (Docker more specifically).
+That is what we call for ourselves the "dev mode" since it is easier to get to the core code of the application
+and see the impact of the changes that are made.
+An other mode that implies to place our front in a container as well and make all of that communicate (with potentially a NGinx service as well) is also possible. It requires a little more work to get it done but it will be helpful in the some cases such as monitoring or chaos engineering.
+
+## Trying to make the back up-and-running
+
+The back is composed, initially, of three different services: a database, an etherpad, and a mail service.
+You can see them by reading the docker-compose.yaml file.
+
+Just run 
+```sh
+docker compose up
+```
+in a terminal to start the services.
+
+###  Starting the front
+
+The file README.md describes all the possible way to launch the front;
+we will simply use a second terminal and use
+```sh
+npm start
+```
+
+## A first problem...
+You should be able to visit localhost:4200 and see the presentation of the app (the front...)
+As you navigate and use the application, you should get the following error popping on your terminal managing the front
+
+[webpack-dev-server] [HPM] Error occurred while proxying request localhost:4200/api/polls to http://localhost:8080/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+
+yet, you launched the containers regarding the back, what happened?
+
+-------------------------------------
+TO CONTINUE
+-------------------------------------
 
 ## Running docker-compose
 
