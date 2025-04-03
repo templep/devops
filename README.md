@@ -5,15 +5,17 @@ This repository contains the material and content of the DevOps course at the en
 
 ### Scheduling
 
-- Introduction to the course and DevOps: Oct. 10th, 2022
-- Quick overview of DevSecOps and MLSecOps: Oct. 13th, 2022
-- Final presentations: Dec. 7th, 2022 (8h-10h)
+- Introduction to the course and DevOps: March 25th, 2025
+- Quick overview of DevSecOps and MLSecOps: May the 23rd, 2025
+- Final presentations: May 16th, 2025 (8h-11h)
 
 ### Material
 
-The introduction to the course and DevOps can be found [here](https://people.irisa.fr/Benoit.Combemale/course/esir/esir3/). 
+All the material can be found on the Moodle module dedicated to this class.
 
 ### Tutorial activities
 
 Students have to choose a system with micro-services to apply some DevOps related tools on it;
-if they cannot think of such system/project, they can go to the [doodle](https://github.com/selabs-ur1/doodle) github page and use it.
+if they cannot think of such system/project, they can go to the [doodle](https://github.com/barais/doodlestudent) github page and use it.
+You can also find a "detailled" pull request to launch the application on "dev mode".
+This is the kind of pull requests that is expected to be __sent on THIS repo__ for the evaluation of your technical realisation
